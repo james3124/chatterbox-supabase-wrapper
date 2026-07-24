@@ -1,0 +1,28 @@
+services:
+  - type: web
+    name: chatterbox-supabase-wrapper
+
+    runtime: docker
+
+    plan: free
+
+    autoDeploy: true
+
+    healthCheckPath: /health
+
+    envVars:
+
+      - key: SUPABASE_URL
+        sync: false
+
+      - key: SUPABASE_SERVICE_ROLE_KEY
+        sync: false
+
+      - key: SUPABASE_STORAGE_BUCKET
+        value: tts-audio
+
+      - key: CHATTERBOX_MODEL
+        value: turbo
+
+      - key: CHATTERBOX_DEVICE
+        value: cpu

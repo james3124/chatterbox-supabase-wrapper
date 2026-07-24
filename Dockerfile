@@ -20,7 +20,7 @@ COPY requirements.txt .
 RUN pip install --upgrade pip && \
     pip install --no-cache-dir torch torchaudio --index-url https://download.pytorch.org/whl/cpu && \
     pip install --no-cache-dir cython numpy && \
-    pip install --no-cache-dir -r requirements.txt
+    pip install --no-cache-dir --no-build-isolation -r requirements.txt
 
 # Copy the application
 COPY . .

@@ -20,6 +20,8 @@ COPY requirements.txt .
 RUN pip install --upgrade pip && \
     pip install --no-cache-dir cython numpy && \
     pip install --no-cache-dir --index-url https://download.pytorch.org/whl/cpu torch==2.6.0 torchaudio==2.6.0 && \
+    pip install --no-cache-dir --no-build-isolation chatterbox-tts==0.1.7 && \
+    python3 -c "from chatterbox.tts_turbo import ChatterboxTurboTTS; print('chatterbox-tts OK')" && \
     pip install --no-cache-dir --no-build-isolation -r requirements.txt
 
 # Copy the application

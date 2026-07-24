@@ -11,6 +11,7 @@ RUN apt-get update && \
         ffmpeg \
         git \
         build-essential \
+        python3-dev \
         libsndfile1 && \
     rm -rf /var/lib/apt/lists/*
 
